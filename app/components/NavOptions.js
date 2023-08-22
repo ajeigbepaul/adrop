@@ -4,6 +4,7 @@ import { FlatList } from "react-native";
 import { TouchableOpacity } from "react-native";
 import { Icon } from "@rneui/themed";
 import * as Icons from "react-native-heroicons/outline";
+import { useNavigation } from "@react-navigation/native";
 
 const data = [
   {
@@ -20,6 +21,7 @@ const data = [
   },
 ];
 const NavOptions = () => {
+ const navigation = useNavigation()
   return (
     <FlatList
       data={data}
@@ -27,7 +29,7 @@ const NavOptions = () => {
       showsHorizontalScrollIndicator={false}
       keyExtractor={(item) => item.id}
       renderItem={({ item }) => (
-        <TouchableOpacity className="bg-gray-100 m-2 p-3 w-fit rounded-lg shadow-md">
+        <TouchableOpacity className="bg-gray-100 m-2 p-3 w-fit rounded-lg shadow-md" onPress={()=>navigation.navigate(item.screen)}>
           <View>
             <Image source={item.image} className="w-32 h-32 object-cover" />
             <Text className="text-sm font-semibold mt-3">{item.title}</Text>
