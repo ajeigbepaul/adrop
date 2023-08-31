@@ -2,7 +2,7 @@ import { View, Text, Image } from "react-native";
 import React from "react";
 import { FlatList } from "react-native";
 import { TouchableOpacity } from "react-native";
-import { Icon } from "@rneui/themed";
+
 import * as Icons from "react-native-heroicons/outline";
 import { useNavigation } from "@react-navigation/native";
 import { useSelector } from "react-redux";
@@ -36,7 +36,7 @@ const NavOptions = () => {
           <View className={`${!origin && 'opacity-10'}`}>
             <Image source={item.image} className="w-32 h-32 object-cover" />
             <Text className="text-sm font-semibold mt-3">{item.title}</Text>
-            <View className="w-10 h-10 rounded-full bg-yellow-400 mt-3 items-center justify-center">
+            <View className="w-12 h-12 rounded-full bg-yellow-400 mt-3 items-center justify-center">
               <Icons.ArrowRightIcon color="white" />
             </View>
           </View>
